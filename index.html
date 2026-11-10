@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <title>Lacklarps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="side">
+      <a class="logo" href="#top">LACKLARPS</a>
+      <nav class="menu" aria-label="Main">
+        <a href="#top">Home</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="side-actions">
+        <button id="sideSignup" class="nav-btn solid" type="button">Sign up</button>
+        <button id="adminTab" class="nav-btn" type="button" aria-expanded="false" aria-controls="adminPanel"><span>Admin panel</span><b id="tabCount" hidden>0</b></button>
+      </div>
+    </aside>
+
+    <main class="content" id="top">
+      <div class="hero">
+        <p class="eyebrow">Baseplate 1</p>
+        <h1>Slick. Minimal. Fast.</h1>
+        <p class="lede"><b>Welcome to Lacklarps.</b> Black, white and nothing in the way, so the content can do the talking.</p>
+        <div class="cta-row">
+          <button id="heroSignup" class="btn primary" type="button">Sign up</button>
+          <a class="btn ghost" href="#work">See the work</a>
+        </div>
+      </div>
+
+      <section id="work">
+        <p class="label">Work</p>
+        <h2>Three blocks, ready to fill.</h2>
+        <div class="rows">
+          <div class="row"><h3>Your main offer</h3><p>Say what Lacklarps is or does in one clear sentence.</p></div>
+          <div class="row"><h3>Featured projects</h3><p>Show products, posts, music, photos or whatever Lacklarps makes.</p></div>
+          <div class="row"><h3>Latest updates</h3><p>A spot for news, a blog feed or announcements as the site grows.</p></div>
+        </div>
+      </section>
+
+      <section id="about">
+        <p class="label">About</p>
+        <h2>Secure role approval.</h2>
+        <div class="about">
+          <div>
+            <p>Sign up with your email, iCloud or Google account. Ask for a Developer or Admin role and the owner approves it by hand.</p>
+            <p>Replace this text with your own story when you are ready.</p>
+          </div>
+          <ul class="facts" aria-label="Site facts">
+            <li><span>Version</span><span>Baseplate 1</span></li>
+            <li><span>Sign in</span><span>Google or email</span></li>
+            <li><span>Pages</span><span>Work, About, Contact</span></li>
+            <li><span>Roles</span><span>Developer, Admin</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <p class="label">Contact</p>
+        <h2>Say hello.</h2>
+        <p>Add the way people should reach Lacklarps here, such as an email address, a form or social links.</p>
+      </section>
+
+      <footer>
+        <span>Lacklarps</span>
+        <span>Baseplate 1</span>
+      </footer>
+    </main>
+  </div>
+
+  <div id="scrim" class="scrim"></div>
+
+  <aside id="adminPanel" class="drawer" aria-label="Account and admin" aria-hidden="true">
+    <div class="dhead">
+      <div class="dtitle">Account</div>
+      <button id="adminClose" class="sm" type="button">Close</button>
+    </div>
+    <p id="msg" class="msg" role="status" aria-live="polite"></p>
+
+    <div id="setupNote" class="blk" hidden>
+      <div class="bt">Setup needed</div>
+      <p class="note">Firebase is not connected yet. Open firebase-config.js, paste your project keys, and reload. README.md has the steps.</p>
+    </div>
+
+    <div id="signedOut" class="blk">
+      <div class="bt">Join Lacklarps</div>
+      <button id="googleBtn" class="google" type="button">Continue with Google</button>
+      <div class="or"><span>or use an email address</span></div>
+      <div class="seg" role="tablist" aria-label="Sign up or sign in">
+        <button id="modeUp" class="on" type="button" role="tab" aria-selected="true">Sign up</button>
+        <button id="modeIn" type="button" role="tab" aria-selected="false">Sign in</button>
+      </div>
+      <form id="emailForm" novalidate>
+        <div id="nameWrap">
+          <label class="lab" for="fName">Name</label>
+          <input id="fName" class="inp" type="text" autocomplete="name" placeholder="Your name">
+        </div>
+        <label class="lab" for="fEmail">Email</label>
+        <input id="fEmail" class="inp" type="email" autocomplete="email" placeholder="you@icloud.com">
+        <label class="lab" for="fPass">Password</label>
+        <input id="fPass" class="inp" type="password" autocomplete="new-password" placeholder="At least 6 characters">
+        <div class="formrow"><button id="submitBtn" class="sm solid" type="submit">Create account</button><button id="resetBtn" class="sm quiet" type="button" hidden>Forgot password</button></div>
+        <p class="note small">Any email works, including iCloud (icloud.com, me.com or mac.com).</p>
+      </form>
+    </div>
+
+    <div id="signedIn" class="blk" hidden>
+      <div class="bt">Your profile</div>
+      <div id="profile"></div>
+      <div id="roleArea"></div>
+      <div class="formrow"><button id="signOutBtn" class="sm quiet" type="button">Sign out</button></div>
+    </div>
+
+    <div id="pendingBlk" class="blk" hidden><div class="bt">Waiting for your approval</div><div id="pending"></div></div>
+    <div id="usersBlk" class="blk" hidden><div class="bt">Sign-ups</div><div id="users"></div></div>
+    <div id="teamBlk" class="blk" hidden><div class="bt">Team</div><div id="members"></div></div>
+  </aside>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
